@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+	<title>Healthy Travels</title>
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:600' rel='stylesheet' type='text/css'>
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.1/flatly/bootstrap.min.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+	<style>
+	.img-responsive {
+		margin: 0 auto;
+	}
+
+	body {
+		background-image: url('/static/new_world2.jpg');
+	}
+
+	li {
+		list-style-type: none;
+	}
+
+	p {
+		font-family: 'Lato', sans-serif;
+	}
+
+	hr { background-color: #ccc; height: 1px; border: 0; }
+
+	</style>
+</head
+<body>
+<script type="text/javascript">console.log("Im on the second page");</script>
+<div class="navbar navbar-default" role="navigation">
+	<div class="-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"> </span>
+				<span class="icon-bar"> </span>
+				<span class="icon-bar"> </span>
+			</button>
+			<a class="navbar-brand">Healthy Travels</a>
+		</div>
+		<div class="navbar-collapse nav-pills collapse">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="/"><i class="fa fa-home"> </i> Home</a></li>
+			</ul>
+		</div><!--/.nav-collapse -->
+	</div><!--/.container-fluid -->
+</div>
+<div class="jumbotron text-center">
+	<img src="/static/cross.png" class="img-responsive" alt="Responsive image" width=300 height=400>
+	<h1>{{ country }}</h1>
+	{% if country == "Australia" %}
+	<h2>Population: 23,500,000</h2>
+	{% elif country == "China" %}
+	<h2>Population: 1,360,000,000</h2>
+	{% else %}
+	<h2>Travel With Knowledge</h2>
+	{% endif %}
+</div>
+<div class="container">
+	<ul>
+		{% for dis in disDic[country] %}
+		<div class="col-md-12 text-center" style="background-color: rgba(100, 100, 100, 0.5);">
+		<li><p style="color: #fff; opacity:1;">{{ dis }}</p></li>
+		<hr>
+		</div>
+		{% endfor %}
+	</ul>
+</div>
+<footer class="footer text-left">
+	<div class="container-fluid">
+		<p class="text-muted">&copy; Team</p>
+	</div>
+</footer>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"> </script>
+<script src="app.js"> </script>
+</body>
+</html>
